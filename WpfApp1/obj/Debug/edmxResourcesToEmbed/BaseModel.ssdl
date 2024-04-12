@@ -1,0 +1,243 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Хранилище SUBSCRIPTION_BDModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="AuthorPages">
+    <Key>
+      <PropertyRef Name="AuthorPage_id" />
+    </Key>
+    <Property Name="AuthorPage_id" Type="int" Nullable="false" />
+    <Property Name="Owner" Type="int" />
+    <Property Name="PageName" Type="nvarchar" MaxLength="40" />
+    <Property Name="Titel_text" Type="nvarchar" MaxLength="80" />
+    <Property Name="PageIcon" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Comments">
+    <Key>
+      <PropertyRef Name="Comment_id" />
+    </Key>
+    <Property Name="Comment_id" Type="int" Nullable="false" />
+    <Property Name="Post_id" Type="int" Nullable="false" />
+    <Property Name="User_id" Type="int" Nullable="false" />
+    <Property Name="Text" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Date" Type="datetime" Nullable="false" />
+    <Property Name="Rating" Type="int" />
+  </EntityType>
+  <EntityType Name="Files">
+    <Key>
+      <PropertyRef Name="File_id" />
+    </Key>
+    <Property Name="File_id" Type="int" Nullable="false" />
+    <Property Name="type" Type="nvarchar" MaxLength="20" />
+    <Property Name="File_url" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Logins">
+    <Key>
+      <PropertyRef Name="Login" />
+    </Key>
+    <Property Name="Login" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="Password" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Posts">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="Text" Type="nvarchar" MaxLength="100" />
+    <Property Name="File_id" Type="int" />
+    <Property Name="Page_id" Type="int" Nullable="false" />
+    <Property Name="Date" Type="datetime" Nullable="false" />
+    <Property Name="access_level" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Subscription_type">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="Level" Type="int" Nullable="false" />
+    <Property Name="Page_id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Subscriptions">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="User_id" Type="int" />
+    <Property Name="Type_id" Type="int" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="User_id" />
+    </Key>
+    <Property Name="User_id" Type="int" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="30" />
+    <Property Name="Login" Type="nvarchar" MaxLength="30" />
+    <Property Name="Email" Type="nvarchar" MaxLength="30" />
+    <Property Name="Role" Type="nvarchar" MaxLength="15" />
+    <Property Name="UserAvatar" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <Association Name="FK_AuthorPages_Users">
+    <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+    <End Role="AuthorPages" Type="Self.AuthorPages" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="User_id" />
+      </Principal>
+      <Dependent Role="AuthorPages">
+        <PropertyRef Name="Owner" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Comments_Posts">
+    <End Role="Posts" Type="Self.Posts" Multiplicity="1" />
+    <End Role="Comments" Type="Self.Comments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Posts">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Comments">
+        <PropertyRef Name="Post_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Comments_Users">
+    <End Role="Users" Type="Self.Users" Multiplicity="1" />
+    <End Role="Comments" Type="Self.Comments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="User_id" />
+      </Principal>
+      <Dependent Role="Comments">
+        <PropertyRef Name="User_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Posts_AuthorPages">
+    <End Role="AuthorPages" Type="Self.AuthorPages" Multiplicity="1" />
+    <End Role="Posts" Type="Self.Posts" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AuthorPages">
+        <PropertyRef Name="AuthorPage_id" />
+      </Principal>
+      <Dependent Role="Posts">
+        <PropertyRef Name="Page_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Posts_Files">
+    <End Role="Files" Type="Self.Files" Multiplicity="0..1" />
+    <End Role="Posts" Type="Self.Posts" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Files">
+        <PropertyRef Name="File_id" />
+      </Principal>
+      <Dependent Role="Posts">
+        <PropertyRef Name="File_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_subscription_type_AuthorPages">
+    <End Role="AuthorPages" Type="Self.AuthorPages" Multiplicity="1" />
+    <End Role="Subscription_type" Type="Self.Subscription_type" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AuthorPages">
+        <PropertyRef Name="AuthorPage_id" />
+      </Principal>
+      <Dependent Role="Subscription_type">
+        <PropertyRef Name="Page_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Subscriptions_subscription_type">
+    <End Role="Subscription_type" Type="Self.Subscription_type" Multiplicity="0..1" />
+    <End Role="Subscriptions" Type="Self.Subscriptions" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Subscription_type">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Subscriptions">
+        <PropertyRef Name="Type_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Subscriptions_Users">
+    <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+    <End Role="Subscriptions" Type="Self.Subscriptions" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="User_id" />
+      </Principal>
+      <Dependent Role="Subscriptions">
+        <PropertyRef Name="User_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Users_Logins">
+    <End Role="Logins" Type="Self.Logins" Multiplicity="0..1" />
+    <End Role="Users" Type="Self.Users" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Logins">
+        <PropertyRef Name="Login" />
+      </Principal>
+      <Dependent Role="Users">
+        <PropertyRef Name="Login" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Хранилище SUBSCRIPTION_BDModelContainer">
+    <EntitySet Name="AuthorPages" EntityType="Self.AuthorPages" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Comments" EntityType="Self.Comments" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Files" EntityType="Self.Files" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Logins" EntityType="Self.Logins" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Posts" EntityType="Self.Posts" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Subscription_type" EntityType="Self.Subscription_type" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Subscriptions" EntityType="Self.Subscriptions" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_AuthorPages_Users" Association="Self.FK_AuthorPages_Users">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="AuthorPages" EntitySet="AuthorPages" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Comments_Posts" Association="Self.FK_Comments_Posts">
+      <End Role="Posts" EntitySet="Posts" />
+      <End Role="Comments" EntitySet="Comments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Comments_Users" Association="Self.FK_Comments_Users">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Comments" EntitySet="Comments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Posts_AuthorPages" Association="Self.FK_Posts_AuthorPages">
+      <End Role="AuthorPages" EntitySet="AuthorPages" />
+      <End Role="Posts" EntitySet="Posts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Posts_Files" Association="Self.FK_Posts_Files">
+      <End Role="Files" EntitySet="Files" />
+      <End Role="Posts" EntitySet="Posts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_subscription_type_AuthorPages" Association="Self.FK_subscription_type_AuthorPages">
+      <End Role="AuthorPages" EntitySet="AuthorPages" />
+      <End Role="Subscription_type" EntitySet="Subscription_type" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Subscriptions_subscription_type" Association="Self.FK_Subscriptions_subscription_type">
+      <End Role="Subscription_type" EntitySet="Subscription_type" />
+      <End Role="Subscriptions" EntitySet="Subscriptions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Subscriptions_Users" Association="Self.FK_Subscriptions_Users">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Subscriptions" EntitySet="Subscriptions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Users_Logins" Association="Self.FK_Users_Logins">
+      <End Role="Logins" EntitySet="Logins" />
+      <End Role="Users" EntitySet="Users" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

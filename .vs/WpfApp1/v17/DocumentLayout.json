@@ -1,0 +1,118 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\4_sem\\\u041E\u041E\u041F\\WpfApp1\\wfplab\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{029F8F23-0FFB-4A0B-9D84-325B0EC9961A}|WpfApp1\\WpfApp1.csproj|d:\\4_sem\\\u043E\u043E\u043F\\wpfapp1\\wfplab\\wpfapp1\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{029F8F23-0FFB-4A0B-9D84-325B0EC9961A}|WpfApp1\\WpfApp1.csproj|solutionrelative:wpfapp1\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{029F8F23-0FFB-4A0B-9D84-325B0EC9961A}|WpfApp1\\WpfApp1.csproj|D:\\4_sem\\\u041E\u041E\u041F\\WpfApp1\\wfplab\\WpfApp1\\Resources\\Selected\\Style.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{029F8F23-0FFB-4A0B-9D84-325B0EC9961A}|WpfApp1\\WpfApp1.csproj|solutionrelative:WpfApp1\\Resources\\Selected\\Style.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{029F8F23-0FFB-4A0B-9D84-325B0EC9961A}|WpfApp1\\WpfApp1.csproj|D:\\4_sem\\\u041E\u041E\u041F\\WpfApp1\\wfplab\\WpfApp1\\Resources\\Style\\StyleDark.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{029F8F23-0FFB-4A0B-9D84-325B0EC9961A}|WpfApp1\\WpfApp1.csproj|solutionrelative:WpfApp1\\Resources\\Style\\StyleDark.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{029F8F23-0FFB-4A0B-9D84-325B0EC9961A}|WpfApp1\\WpfApp1.csproj|D:\\4_sem\\\u041E\u041E\u041F\\WpfApp1\\wfplab\\WpfApp1\\Forms\\RegisterPage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{029F8F23-0FFB-4A0B-9D84-325B0EC9961A}|WpfApp1\\WpfApp1.csproj|solutionrelative:WpfApp1\\Forms\\RegisterPage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{029F8F23-0FFB-4A0B-9D84-325B0EC9961A}|WpfApp1\\WpfApp1.csproj|D:\\4_sem\\\u041E\u041E\u041F\\WpfApp1\\wfplab\\WpfApp1\\App.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{029F8F23-0FFB-4A0B-9D84-325B0EC9961A}|WpfApp1\\WpfApp1.csproj|solutionrelative:WpfApp1\\App.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{029F8F23-0FFB-4A0B-9D84-325B0EC9961A}|WpfApp1\\WpfApp1.csproj|D:\\4_sem\\\u041E\u041E\u041F\\WpfApp1\\wfplab\\WpfApp1\\MainWindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{029F8F23-0FFB-4A0B-9D84-325B0EC9961A}|WpfApp1\\WpfApp1.csproj|solutionrelative:WpfApp1\\MainWindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "D:\\4_sem\\\u041E\u041E\u041F\\WpfApp1\\wfplab\\WpfApp1\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "WpfApp1\\MainWindow.xaml",
+              "ToolTip": "D:\\4_sem\\\u041E\u041E\u041F\\WpfApp1\\wfplab\\WpfApp1\\MainWindow.xaml",
+              "RelativeToolTip": "WpfApp1\\MainWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-04-01T13:37:12.046Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "StyleDark.xaml",
+              "DocumentMoniker": "D:\\4_sem\\\u041E\u041E\u041F\\WpfApp1\\wfplab\\WpfApp1\\Resources\\Style\\StyleDark.xaml",
+              "RelativeDocumentMoniker": "WpfApp1\\Resources\\Style\\StyleDark.xaml",
+              "ToolTip": "D:\\4_sem\\\u041E\u041E\u041F\\WpfApp1\\wfplab\\WpfApp1\\Resources\\Style\\StyleDark.xaml",
+              "RelativeToolTip": "WpfApp1\\Resources\\Style\\StyleDark.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-04-06T13:51:07.191Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "RegisterPage.xaml",
+              "DocumentMoniker": "D:\\4_sem\\\u041E\u041E\u041F\\WpfApp1\\wfplab\\WpfApp1\\Forms\\RegisterPage.xaml",
+              "RelativeDocumentMoniker": "WpfApp1\\Forms\\RegisterPage.xaml",
+              "ToolTip": "D:\\4_sem\\\u041E\u041E\u041F\\WpfApp1\\wfplab\\WpfApp1\\Forms\\RegisterPage.xaml",
+              "RelativeToolTip": "WpfApp1\\Forms\\RegisterPage.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-04-06T12:19:07.245Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "App.xaml",
+              "DocumentMoniker": "D:\\4_sem\\\u041E\u041E\u041F\\WpfApp1\\wfplab\\WpfApp1\\App.xaml",
+              "RelativeDocumentMoniker": "WpfApp1\\App.xaml",
+              "ToolTip": "D:\\4_sem\\\u041E\u041E\u041F\\WpfApp1\\wfplab\\WpfApp1\\App.xaml",
+              "RelativeToolTip": "WpfApp1\\App.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-04-04T17:41:15.352Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "MainWindow.xaml.cs",
+              "DocumentMoniker": "D:\\4_sem\\\u041E\u041E\u041F\\WpfApp1\\wfplab\\WpfApp1\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "WpfApp1\\MainWindow.xaml.cs",
+              "ToolTip": "D:\\4_sem\\\u041E\u041E\u041F\\WpfApp1\\wfplab\\WpfApp1\\MainWindow.xaml.cs",
+              "RelativeToolTip": "WpfApp1\\MainWindow.xaml.cs",
+              "ViewState": "AQIAAA8AAAAAAAAAAAAAAA8AAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-01T13:37:09.198Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Style.xaml",
+              "DocumentMoniker": "D:\\4_sem\\\u041E\u041E\u041F\\WpfApp1\\wfplab\\WpfApp1\\Resources\\Selected\\Style.xaml",
+              "RelativeDocumentMoniker": "WpfApp1\\Resources\\Selected\\Style.xaml",
+              "ToolTip": "D:\\4_sem\\\u041E\u041E\u041F\\WpfApp1\\wfplab\\WpfApp1\\Resources\\Selected\\Style.xaml",
+              "RelativeToolTip": "WpfApp1\\Resources\\Selected\\Style.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-04-06T14:31:01.436Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
