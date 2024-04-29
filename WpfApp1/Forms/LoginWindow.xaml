@@ -5,26 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp1.Forms"
         mc:Ignorable="d"
-        Title="LoginWindow" Height="300" Width="350" ResizeMode="NoResize">
-    <Border Background="{StaticResource SecondBackground}" CornerRadius="10" VerticalAlignment="Center" Width="300px" Height="auto" Padding="5px">
-        <Grid>
-            <Grid.RowDefinitions>
-                <RowDefinition  Height="auto"/>
-                <RowDefinition Height="*"/>
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-            </Grid.ColumnDefinitions>
-            <StackPanel VerticalAlignment="Center" Width="250px" Grid.Row="0">
-                <Label Content="{DynamicResource LoginStr}"></Label>
-                <TextBox></TextBox>
-                <Label Content="{DynamicResource PasswordStr}"></Label>
-                <TextBox></TextBox>
-            </StackPanel>
-            <DockPanel Margin="20px" VerticalAlignment="Top"  Width="240px" Grid.Row="1">
-                <Button Opacity="0.7" DockPanel.Dock="Left" Width="120px" Content="{DynamicResource RegisterStr}"></Button>
-                <Button DockPanel.Dock="Right" Width="100px" Content="{DynamicResource SignInStr}"></Button>
-            </DockPanel>
-        </Grid>
-    </Border>
+        Title="LoginWindow" Height="350" Width="350" ResizeMode="NoResize">
+    
+    <Frame x:Name="MainFrame" NavigationUIVisibility="Hidden" Background="{StaticResource MainBackground}"/>
+    
 </Window> 

@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="b676f50e217b4094a8731d295a671d68" Name="Diagram1" ZoomLevel="77">
+      <Diagram DiagramId="b676f50e217b4094a8731d295a671d68" Name="Diagram1" ZoomLevel="60">
         <EntityTypeShape EntityType="SUBSCRIPTION_BDModel.AuthorPages" Width="1.5" PointX="5.25" PointY="3.375" IsExpanded="true" />
         <EntityTypeShape EntityType="SUBSCRIPTION_BDModel.Comments" Width="1.5" PointX="9.75" PointY="1.375" IsExpanded="true" />
         <EntityTypeShape EntityType="SUBSCRIPTION_BDModel.Files" Width="1.5" PointX="5.25" PointY="0.75" IsExpanded="true" />
@@ -12,8 +12,8 @@
         <EntityTypeShape EntityType="SUBSCRIPTION_BDModel.Posts" Width="1.5" PointX="7.5" PointY="3.25" IsExpanded="true" />
         <EntityTypeShape EntityType="SUBSCRIPTION_BDModel.Subscription_type" Width="1.5" PointX="7.5" PointY="7" IsExpanded="true" />
         <EntityTypeShape EntityType="SUBSCRIPTION_BDModel.Subscriptions" Width="1.5" PointX="9.75" PointY="5.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="SUBSCRIPTION_BDModel.sysdiagrams" Width="1.5" PointX="0.875" PointY="6.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="SUBSCRIPTION_BDModel.Users" Width="1.5" PointX="3" PointY="3.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SUBSCRIPTION_BDModel.sysdiagrams" Width="1.5" PointX="13.75" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SUBSCRIPTION_BDModel.Users" Width="1.5" PointX="3" PointY="2.875" IsExpanded="true" />
         <AssociationConnector Association="SUBSCRIPTION_BDModel.FK_AuthorPages_Users" ManuallyRouted="false" />
         <AssociationConnector Association="SUBSCRIPTION_BDModel.FK_Posts_AuthorPages" ManuallyRouted="false" />
         <AssociationConnector Association="SUBSCRIPTION_BDModel.FK_subscription_type_AuthorPages" ManuallyRouted="false" />

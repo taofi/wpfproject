@@ -4,8 +4,8 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
-        Title="MainWindow" Height="700" Width="1200">
-    <Grid>
+        Title="MainWindow" Height="650" Width="1100">
+    <Grid Background="{DynamicResource MainBackground}" >
         <Grid.RowDefinitions>
             <RowDefinition Height="45px"/>
             <RowDefinition Height="*"/>
@@ -13,67 +13,71 @@
 
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="3*"/>
-            <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
         <!-- Заголовок на всю ширину -->
-        <Grid Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="0" Background="{StaticResource SecondBackground}">
-            <StackPanel Margin="0 0 6px 0" Orientation="Horizontal" HorizontalAlignment="Right" >
-                <Button Content="{DynamicResource SignInStr}" Width="120px"/>
+        <Grid Grid.Column="0"  VerticalAlignment="Stretch" Grid.Row="0" Background="{DynamicResource SecondBackground}">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="80px"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Orientation="Horizontal">
+                <Border Margin="10 0 0 0" Width="30" Height="30" CornerRadius="50" Background="{DynamicResource InteractionColor}">
+                    <Button Width="25" Height="25" Click="StyleСhange_Сlick">
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Ellipse Fill="{DynamicResource DarkColor}" />
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                </Border>
+                <Border Padding="0 0 0 10" Margin="10 0 0 0" Width="30" Height="30" CornerRadius="50"  Background="{DynamicResource InteractionColor}">
+                    <Button Width="25" Height="NaN" Click="LangСhange_Сlick" Margin="2,0,2,-5" >
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Label HorizontalAlignment="Center" TextBlock.FontSize="12"  Content="{DynamicResource ChosenLang}"/>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                </Border>
+            </StackPanel>
+            
+            <StackPanel Name="AdminPanel" VerticalAlignment="Center" HorizontalAlignment="Left" Grid.Column="1">
+                <Button Margin="10 0 0 0" Content="{DynamicResource AdminPanel}" Width="120px" Click="Button_Click"/>
+            </StackPanel>
+            
+            <StackPanel Name="GuestPanel" Grid.Column="2"
+            Orientation="Horizontal" HorizontalAlignment="Right">
+                <Button Margin="0 0 10 0" Content="{DynamicResource SignInStr}" Width="120px" Click="SignIn_Click"/>
+            </StackPanel>
+
+            <StackPanel Name="UserPanel" Visibility="Collapsed" VerticalAlignment="Center" HorizontalAlignment="Right" Orientation="Horizontal"  Grid.Column="2">
+                <Label Name="UserNameLabel" Margin="0,0,10,0"></Label>
+                <Border CornerRadius="50" Background="{DynamicResource DarkColor}" Margin="0,0,10,0"
+        VerticalAlignment="Center" HorizontalAlignment="Center" ClipToBounds="True">
+                    <Image Name="UserIcon" HorizontalAlignment="Center" Width="35" Height="35"
+                           Stretch="UniformToFill"
+                           MouseLeftButtonDown="UserIcon_MouseLeftButtonDown"
+                           MouseEnter="UserIcon_MouseEnter"
+                           MouseLeave="UserIcon_MouseLeave">
+                        <Image.Clip>
+                            <RectangleGeometry RadiusX="50" RadiusY="50" Rect="0,0,35,35"/>
+                        </Image.Clip>
+                        <Image.Source>
+                            <BitmapImage UriSource="Resources/img/profile.png"/>
+                        </Image.Source>
+                    </Image>
+                </Border>
+
             </StackPanel>
         </Grid>
 
-        <!-- Контейнер для фильтров -->
-        <Grid VerticalAlignment="Top" Background="Transparent" Grid.Column="0" Margin="5" Grid.Row="1">
-            <Border Height="400px" Margin="10px 10px 10px 0px" Background="{StaticResource SecondBackground}">
-                <StackPanel>
-                    <TextBox  FontSize="20px" Padding="5px" Height="40px" Margin="10px">asd</TextBox>
-                    <Button Margin="10px 0 10px 10px" Content="{DynamicResource SearchStr}"/>
-                </StackPanel>
+        <ScrollViewer  Background="{DynamicResource InteractionColor}" Grid.Column="1" Grid.Row="1" VerticalScrollBarVisibility="Visible">
+            <Border  Background="{DynamicResource MainBackground}" CornerRadius="0">
+                <Frame x:Name="MainFrame" NavigationUIVisibility="Hidden"/>
             </Border>
-        </Grid>
+        </ScrollViewer>
 
-        <!-- Контейнер для списка элементов -->
-        <Grid Background="Transparent" Grid.Column="1" Margin="5" Grid.Row="1">
-        <ListView Background="{StaticResource SecondBackground}" Margin="10px">
-                <ListView.ItemContainerStyle>
-                    <Style TargetType="ListViewItem">
-                        <Setter Property="HorizontalContentAlignment" Value="Stretch" />
-                        <Setter Property="FontSize" Value="15"/>
-                        <Setter Property="FontFamily" Value="pack://application:,,,/WpfApp1;component/Resources/Fonts/#PT Sans Narrow Bold"/>
-                    </Style>
-                </ListView.ItemContainerStyle>
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <Border Background="#CEBEED" Padding="10" Margin="5">
-                            <DockPanel HorizontalAlignment="Left">
-                                <Border Width="50" Height="50" CornerRadius="50" Background="#755181" Margin="0,0,10,0" VerticalAlignment="Center">
-                                    <Image HorizontalAlignment="Center" Width="50px" Height="50px" Stretch="UniformToFill">
-                                        <Image.Source>
-                                            <Binding Path="ImagePreview">
-                                                <Binding.TargetNullValue>
-                                                    <ImageSource>Resources/img/profile.png</ImageSource>
-                                                </Binding.TargetNullValue>
-                                            </Binding>
-                                        </Image.Source>
-                                    </Image>
-                                </Border>
-
-                                <TextBlock Text="{Binding Name}" VerticalAlignment="Center" Foreground="Black"/>
-                            </DockPanel>
-                        </Border>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
-        </Grid>
-
-        <!-- Контейнер для пользователя -->
-        <Grid VerticalAlignment="Top" Background="Transparent" Grid.Column="2" Margin="5" Grid.Row="1">
-            <Border Padding="10px" Height="400px" Margin="10px" Background="{StaticResource SecondBackground}">
-                <StackPanel>
-                </StackPanel>
-            </Border>
-        </Grid>
     </Grid>
 </Window>

@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-D:\4_sem\ООП\WpfApp1\WpfApp1\obj\Debug\
+D:\4_sem\ООП\WpfApp1\wfplab\WpfApp1\obj\Debug\
 WpfApp1
 none
 false
 DEBUG;TRACE
-D:\4_sem\ООП\WpfApp1\WpfApp1\App.xaml
-9-834955718
+D:\4_sem\ООП\WpfApp1\wfplab\WpfApp1\App.xaml
+161932826294
 2-1161474625
-20464201227
-58-962100110
-Forms\LoginWindow.xaml;Forms\RegisterPage.xaml;MainWindow.xaml;Resources\Languages\Strings.en-US.xaml;Resources\Languages\Strings.ru-RU.xaml;Resources\Selected\Language.xaml;Resources\Selected\Style.xaml;Resources\Style\StyleDark.xaml;Resources\Style\StyleLight.xaml;
+30-983553983
+581161662076
+AdminWindow.xaml;Forms\LoginPage.xaml;Forms\LoginWindow.xaml;Forms\RegisterPage.xaml;MainWindow.xaml;Pages\AuthorPage.xaml;Pages\CatalogPage.xaml;Pages\UserPage.xaml;Resources\Languages\language.xaml;Resources\Languages\Strings.en-US.xaml;Resources\Languages\Strings.ru-RU.xaml;Resources\Style\Colors.xaml;Resources\Style\Static.xaml;Resources\Style\StyleRed.xaml;Resources\Style\StyleGreen.xaml;Resources\Style\StylePurple.xaml;
 
 False
 

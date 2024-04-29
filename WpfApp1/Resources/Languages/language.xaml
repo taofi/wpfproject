@@ -7,6 +7,12 @@
     <system:String x:Key="SignInStr">Войти</system:String>
     <system:String x:Key="RegisterStr">Регистрация</system:String>
 
+    <system:String x:Key="ChosenLang">ру</system:String>
 
+    <system:String x:Key="Create">Создать</system:String>
+    <system:String x:Key="Save">Сохранить</system:String>
+    
+    <system:String x:Key="NoPageInfo">у вас еще не создана страница автора</system:String>
     <system:String x:Key="SearchStr">Поиск</system:String>
+    <system:String x:Key="AdminPanel">Панель админа</system:String>
 </ResourceDictionary>

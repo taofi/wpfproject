@@ -15,18 +15,11 @@ namespace WpfApp1
     
     public partial class SUBSCRIPTION_BDEntities : DbContext
     {
-        private static SUBSCRIPTION_BDEntities _context;
         public SUBSCRIPTION_BDEntities()
             : base("name=SUBSCRIPTION_BDEntities")
         {
         }
     
-        public static SUBSCRIPTION_BDEntities GetContext()
-        {
-            if(_context == null)
-                _context = new SUBSCRIPTION_BDEntities();
-            return _context;
-        }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             throw new UnintentionalCodeFirstException();

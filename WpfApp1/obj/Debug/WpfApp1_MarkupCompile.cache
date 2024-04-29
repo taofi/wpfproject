@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 D:\4_sem\ООП\WpfApp1\wfplab\WpfApp1\App.xaml
-9-834955718
+161932826294
 2-1161474625
-19-1457576894
+291389635192
 581161662076
-Forms\LoginWindow.xaml;Forms\RegisterPage.xaml;MainWindow.xaml;Resources\Languages\Strings.en-US.xaml;Resources\Languages\Strings.ru-RU.xaml;Resources\Selected\Language.xaml;Resources\Selected\Style.xaml;Resources\Style\StyleDark.xaml;Resources\Style\StyleLight.xaml;
+AdminWindow.xaml;Forms\LoginPage.xaml;Forms\LoginWindow.xaml;Forms\RegisterPage.xaml;MainWindow.xaml;Pages\AuthorPage.xaml;Pages\CatalogPage.xaml;Pages\UserPage.xaml;Resources\Languages\language.xaml;Resources\Languages\Strings.en-US.xaml;Resources\Languages\Strings.ru-RU.xaml;Resources\Style\Colors.xaml;Resources\Style\Static.xaml;Resources\Style\StyleRed.xaml;Resources\Style\StyleGreen.xaml;Resources\Style\StylePurple.xaml;
 
 False
 

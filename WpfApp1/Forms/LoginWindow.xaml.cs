@@ -22,6 +22,13 @@ namespace WpfApp1.Forms
         public LoginWindow()
         {
             InitializeComponent();
+            var loginPage = new LoginPage();
+            MainFrame.Navigate(loginPage);
+            loginPage.UserLoggedIn += UserLoggedIn;
+        }
+        private void UserLoggedIn()
+        {
+            this.DialogResult = true; 
         }
     }
 }

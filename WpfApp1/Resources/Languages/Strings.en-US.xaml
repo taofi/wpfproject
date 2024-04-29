@@ -1,4 +1,15 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-    
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:system="clr-namespace:System;assembly=mscorlib">
+    <system:String x:Key="LoginStr">Login</system:String>
+    <system:String x:Key="PasswordStr">Password</system:String>
+    <system:String x:Key="NameStr">Name</system:String>
+    <system:String x:Key="EmailStr">Email</system:String>
+    <system:String x:Key="SignInStr">Sign In</system:String>
+    <system:String x:Key="RegisterStr">Sign UP</system:String>
+
+    <system:String x:Key="ChosenLang">eng</system:String>
+
+    <system:String x:Key="SearchStr">Search</system:String>
+    <system:String x:Key="AdminPanel">Admin Panel</system:String>
+
 </ResourceDictionary>
