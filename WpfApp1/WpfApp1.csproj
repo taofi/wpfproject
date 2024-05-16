@@ -17,6 +17,21 @@
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
     <TargetFrameworkProfile />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -26,7 +41,7 @@
     <OutputPath>bin\Debug\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
+    <WarningLevel>3</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -168,15 +183,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="AdminWindow.xaml.cs">
-      <DependentUpon>AdminWindow.xaml</DependentUpon>
-    </Compile>
     <Compile Include="AuthorPages.cs">
-      <DependentUpon>BaseModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="BaseModel.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
       <DependentUpon>BaseModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Comments.cs">
@@ -185,33 +192,15 @@
     <Compile Include="Files.cs">
       <DependentUpon>BaseModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Forms\LoginPage.xaml.cs">
-      <DependentUpon>LoginPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\LoginWindow.xaml.cs">
-      <DependentUpon>LoginWindow.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\RegisterPage.xaml.cs">
-      <DependentUpon>RegisterPage.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Logins.cs">
       <DependentUpon>BaseModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\BaseModel.cs" />
-    <Compile Include="Models\IRepository.cs" />
-    <Compile Include="Models\Store.cs" />
-    <Compile Include="Models\User.cs" />
-    <Compile Include="Models\UserRepository.cs" />
-    <Compile Include="Pages\AuthorPage.xaml.cs">
-      <DependentUpon>AuthorPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\CatalogPage.xaml.cs">
-      <DependentUpon>CatalogPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\UserPage.xaml.cs">
-      <DependentUpon>UserPage.xaml</DependentUpon>
-    </Compile>
+    <Compile Include="MVVM\Models\Converters\PostImageSourceConverter.cs" />
+    <Compile Include="MVVM\Models\DataService\UserDataService.cs" />
     <Compile Include="Posts.cs">
+      <DependentUpon>BaseModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Requests.cs">
       <DependentUpon>BaseModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Subscriptions.cs">
@@ -226,19 +215,124 @@
     <Compile Include="Users.cs">
       <DependentUpon>BaseModel.tt</DependentUpon>
     </Compile>
-    <Page Include="AdminWindow.xaml">
+    <Compile Include="Utilities\Service\FileService.cs" />
+    <Compile Include="Utilities\Navigation\FrameNames.cs" />
+    <Compile Include="Utilities\Navigation\INavigationService.cs" />
+    <Compile Include="Utilities\Navigation\CustomNavigationService .cs" />
+    <Compile Include="Utilities\PasswordBoxHelper.cs" />
+    <Compile Include="MVVM\Models\Repository\CommentsRepository.cs" />
+    <Compile Include="MVVM\Models\Repository\SubscriptionRepository.cs" />
+    <Compile Include="MVVM\Models\Repository\RequestsRepository.cs" />
+    <Compile Include="MVVM\Models\Repository\SubscriptionTypeRepository.cs" />
+    <Compile Include="MVVM\Models\Repository\PostsRepository.cs" />
+    <Compile Include="Utilities\Service\SubscriptionService.cs" />
+    <Compile Include="Utilities\Validater.cs" />
+    <Compile Include="MVVM\Models\PartialClass\Comments.cs" />
+    <Compile Include="MVVM\Models\PartialClass\Posts.cs" />
+    <Compile Include="MVVM\Models\PartialClass\Requests.cs" />
+    <Compile Include="MVVM\Models\PartialClass\Subscriptions.cs" />
+    <Compile Include="MVVM\Models\PartialClass\SUBSCRIPTION_BDEntities1.cs" />
+    <Compile Include="MVVM\Models\PartialClass\Users.cs" />
+    <Compile Include="MVVM\User_Controls\IconButton.xaml.cs">
+      <DependentUpon>IconButton.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MVVM\ViewModel\AdminVM.cs" />
+    <Compile Include="MVVM\ViewModel\AuthorPageSettingVM.cs" />
+    <Compile Include="MVVM\ViewModel\AuthorPageVM.cs" />
+    <Compile Include="MVVM\ViewModel\CatalogVM.cs" />
+    <Compile Include="MVVM\ViewModel\CommentsVM.cs" />
+    <Compile Include="MVVM\ViewModel\CreateAuthorVM.cs" />
+    <Compile Include="MVVM\ViewModel\CreatePostVM.cs" />
+    <Compile Include="MVVM\ViewModel\Subscription\CreateSubscriptionTypesVM.cs" />
+    <Compile Include="MVVM\ViewModel\Forms\LoginVM.cs" />
+    <Compile Include="MVVM\ViewModel\Forms\RegisterVM.cs" />
+    <Compile Include="MVVM\ViewModel\PageListVM.cs" />
+    <Compile Include="MVVM\ViewModel\Subscription\RequestsVM.cs" />
+    <Compile Include="MVVM\ViewModel\Subscription\SubscriptionVM.cs" />
+    <Compile Include="MVVM\ViewModel\UserPageVM.cs" />
+    <Compile Include="MVVM\View\AdminWindow.xaml.cs">
+      <DependentUpon>AdminWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="BaseModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BaseModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BaseModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BaseModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BaseModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BaseModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="MVVM\Models\Converters\BoolToVisibilityConverter .cs" />
+    <Compile Include="MVVM\Models\Converters\ImageSourceConverter.cs" />
+    <Compile Include="MVVM\View\Forms\LoginPage.xaml.cs">
+      <DependentUpon>LoginPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MVVM\View\Forms\RegisterPage.xaml.cs">
+      <DependentUpon>RegisterPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Utilities\BaseModel.cs" />
+    <Compile Include="MVVM\Models\Repository\IRepository.cs" />
+    <Compile Include="MVVM\Models\RelayCommand.cs" />
+    <Compile Include="Utilities\Store.cs" />
+    <Compile Include="MVVM\Models\Repository\AuthorPagesRepository.cs" />
+    <Compile Include="MVVM\Models\Repository\UserRepository.cs" />
+    <Compile Include="MVVM\View\Pages\AuthorPage.xaml.cs">
+      <DependentUpon>AuthorPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MVVM\View\Pages\CatalogPage.xaml.cs">
+      <DependentUpon>CatalogPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MVVM\View\Pages\CommentsPage.xaml.cs">
+      <DependentUpon>CommentsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MVVM\View\Pages\CreatePostPage.xaml.cs">
+      <DependentUpon>CreatePostPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MVVM\View\Pages\Subscription\CreateSubscriptionTypesPage.xaml.cs">
+      <DependentUpon>CreateSubscriptionTypesPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MVVM\View\Pages\Subscription\RequestsPage.xaml.cs">
+      <DependentUpon>RequestsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MVVM\View\Pages\SettingsPages\AuthorPageSetting.xaml.cs">
+      <DependentUpon>AuthorPageSetting.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MVVM\View\Pages\SettingsPages\CreateAuthorPage.xaml.cs">
+      <DependentUpon>CreateAuthorPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MVVM\View\Pages\SettingsPages\PageList.xaml.cs">
+      <DependentUpon>PageList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MVVM\View\Pages\Subscription\SubscriptionPage.xaml.cs">
+      <DependentUpon>SubscriptionPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MVVM\View\Pages\UserPage.xaml.cs">
+      <DependentUpon>UserPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MVVM\ViewModel\MainModel.cs" />
+    <Page Include="Resources\Style\Converters.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Forms\LoginPage.xaml">
+    <Page Include="MVVM\User_Controls\IconButton.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Forms\LoginWindow.xaml">
+    <Page Include="MVVM\View\AdminWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Forms\RegisterPage.xaml">
+    <Page Include="MVVM\View\Forms\LoginPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MVVM\View\Forms\RegisterPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -250,29 +344,51 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="BaseModel.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>BaseModel.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="BaseModel.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>BaseModel.edmx</DependentUpon>
-    </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Pages\AuthorPage.xaml">
+    <Page Include="MVVM\View\Pages\AuthorPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\CatalogPage.xaml">
+    <Page Include="MVVM\View\Pages\CatalogPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\UserPage.xaml">
+    <Page Include="MVVM\View\Pages\CommentsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MVVM\View\Pages\CreatePostPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MVVM\View\Pages\Subscription\CreateSubscriptionTypesPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MVVM\View\Pages\Subscription\RequestsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MVVM\View\Pages\SettingsPages\AuthorPageSetting.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MVVM\View\Pages\SettingsPages\CreateAuthorPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MVVM\View\Pages\SettingsPages\PageList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MVVM\View\Pages\Subscription\SubscriptionPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MVVM\View\Pages\UserPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -349,25 +465,55 @@
     <Resource Include="Resources\img\profile.png" />
   </ItemGroup>
   <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
     <Content Include="BaseModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>BaseModel.Context.cs</LastGenOutput>
       <DependentUpon>BaseModel.edmx</DependentUpon>
+      <LastGenOutput>BaseModel.Context.cs</LastGenOutput>
     </Content>
     <Content Include="BaseModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>BaseModel.edmx</DependentUpon>
       <LastGenOutput>BaseModel.cs</LastGenOutput>
     </Content>
-    <Resource Include="Resources\img\1.jpg" />
-    <Resource Include="Resources\img\2.jpg" />
-    <Resource Include="Resources\img\3.jpg" />
-    <Resource Include="Resources\img\4.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+    <Resource Include="Resources\img\icons\icon.ico" />
+    <Resource Include="Resources\img\icons\hover\download.png" />
+    <Resource Include="Resources\img\icons\simple\download.png" />
+    <Resource Include="Resources\img\icons\hover\list.png" />
+    <Resource Include="Resources\img\icons\simple\list.png" />
+    <Resource Include="Resources\img\icons\simple\check.png" />
+    <Resource Include="Resources\img\icons\hover\check.png" />
+    <Resource Include="Resources\img\icons\hover\cross.png" />
+    <Resource Include="Resources\img\icons\simple\cross.png" />
+    <Resource Include="Resources\img\icons\hover\comment.png" />
+    <Resource Include="Resources\img\icons\simple\comment.png" />
+    <Resource Include="Resources\img\file.png" />
+    <Resource Include="Resources\img\icons\hover\angle-left.png" />
+    <Resource Include="Resources\img\icons\hover\angle-right.png" />
+    <Resource Include="Resources\img\icons\hover\home.png" />
+    <Resource Include="Resources\img\icons\hover\pencil.png" />
+    <Resource Include="Resources\img\icons\hover\trash.png" />
+    <Resource Include="Resources\img\icons\simple\angle-left.png" />
+    <Resource Include="Resources\img\icons\simple\angle-right.png" />
+    <Resource Include="Resources\img\icons\simple\home.png" />
+    <Resource Include="Resources\img\icons\simple\pencil.png" />
+    <Resource Include="Resources\img\icons\simple\trash.png" />
   </ItemGroup>
   <ItemGroup />
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.8">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.8 %28x86 и x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Microsoft.Data.SqlClient.SNI.5.2.0\build\net462\Microsoft.Data.SqlClient.SNI.targets" Condition="Exists('..\packages\Microsoft.Data.SqlClient.SNI.5.2.0\build\net462\Microsoft.Data.SqlClient.SNI.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

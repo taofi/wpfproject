@@ -5,13 +5,39 @@
     <system:String x:Key="NameStr">Имя</system:String>
     <system:String x:Key="EmailStr">Почта</system:String>
     <system:String x:Key="SignInStr">Войти</system:String>
+    <system:String x:Key="SignOutStr">Выйти</system:String>
+
     <system:String x:Key="RegisterStr">Регистрация</system:String>
+    <system:String x:Key="TitleStr">Название</system:String>
+    <system:String x:Key="DescriptionStr">Описание</system:String>
 
     <system:String x:Key="ChosenLang">ру</system:String>
 
+    <system:String x:Key="Text">Текст</system:String>
+    <system:String x:Key="Level">Уровень</system:String>
+
+
+    <system:String x:Key="LoadPhoto">Загрузить фото</system:String>
+    <system:String x:Key="LoadFile">Загрузить файл</system:String>
+    <system:String x:Key="Back">Назад</system:String>
+
+    <system:String x:Key="Subscribers">Подписчики</system:String>
+    <system:String x:Key="Requests">Запросы</system:String>
+
+
+    <system:String x:Key="Subscribe">Подписаться</system:String>
+    <system:String x:Key="SendRequest">Отправить запрос</system:String>
+    <system:String x:Key="Send">Отправить</system:String>
+    <system:String x:Key="PostNotAvailable">Пост не доступен</system:String>
+    <system:String x:Key="FotAccess">для доступа нужена подписка выше уровня</system:String>
+
+    <system:String x:Key="Add">Добавить</system:String>
     <system:String x:Key="Create">Создать</system:String>
+    <system:String x:Key="CreatePost">Создать пост</system:String>
     <system:String x:Key="Save">Сохранить</system:String>
-    
+    <system:String x:Key="aboutAuthor">об Авторе</system:String>
+
+
     <system:String x:Key="NoPageInfo">у вас еще не создана страница автора</system:String>
     <system:String x:Key="SearchStr">Поиск</system:String>
     <system:String x:Key="AdminPanel">Панель админа</system:String>

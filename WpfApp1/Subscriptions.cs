@@ -15,8 +15,8 @@ namespace WpfApp1
     public partial class Subscriptions
     {
         public int id { get; set; }
-        public Nullable<int> User_id { get; set; }
-        public Nullable<int> Type_id { get; set; }
+        public int User_id { get; set; }
+        public int Type_id { get; set; }
     
         public virtual Subscription_type Subscription_type { get; set; }
         public virtual Users Users { get; set; }

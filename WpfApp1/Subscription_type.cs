@@ -18,6 +18,7 @@ namespace WpfApp1
         public Subscription_type()
         {
             this.Subscriptions = new HashSet<Subscriptions>();
+            this.Requests = new HashSet<Requests>();
         }
     
         public int id { get; set; }
@@ -28,5 +29,7 @@ namespace WpfApp1
         public virtual AuthorPages AuthorPages { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Subscriptions> Subscriptions { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Requests> Requests { get; set; }
     }
 }

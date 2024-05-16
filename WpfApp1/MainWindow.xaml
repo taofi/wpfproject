@@ -2,9 +2,11 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:local="clr-namespace:WpfApp1.User_Controls"
+        Icon="pack://application:,,,/WpfApp1;component/Resources/img/icons/icon.ico"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
-        Title="MainWindow" Height="650" Width="1100">
+        Title="MainWindow" Height="650" Width="1100" MinWidth="800" MinHeight="500">
     <Grid Background="{DynamicResource MainBackground}" >
         <Grid.RowDefinitions>
             <RowDefinition Height="45px"/>
@@ -19,12 +21,20 @@
         <Grid Grid.Column="0"  VerticalAlignment="Stretch" Grid.Row="0" Background="{DynamicResource SecondBackground}">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="80px"/>
+                <ColumnDefinition Width="80px"/>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            <StackPanel Orientation="Horizontal">
+            <StackPanel Grid.Column="0" Orientation="Horizontal" HorizontalAlignment="Center">
+                <local:IconButton Margin="10" Width="20" Height="30"
+NormalImage="pack://application:,,,/WpfApp1;component/Resources/img/icons/simple/home.png"
+HoverImage="pack://application:,,,/WpfApp1;component/Resources/img/icons/hover/home.png"
+Command="{Binding GoHomeCommand}" IsEnabled="true"/>
+            </StackPanel>
+
+            <StackPanel Grid.Column="1" Orientation="Horizontal">
                 <Border Margin="10 0 0 0" Width="30" Height="30" CornerRadius="50" Background="{DynamicResource InteractionColor}">
-                    <Button Width="25" Height="25" Click="StyleСhange_Сlick">
+                    <Button Width="25" Height="25" Command="{Binding StyleChangeCommand}">
                         <Button.Template>
                             <ControlTemplate TargetType="Button">
                                 <Ellipse Fill="{DynamicResource DarkColor}" />
@@ -33,7 +43,7 @@
                     </Button>
                 </Border>
                 <Border Padding="0 0 0 10" Margin="10 0 0 0" Width="30" Height="30" CornerRadius="50"  Background="{DynamicResource InteractionColor}">
-                    <Button Width="25" Height="NaN" Click="LangСhange_Сlick" Margin="2,0,2,-5" >
+                    <Button Width="25" Height="NaN" Command="{Binding LangChangeCommand}" Margin="2,0,2,-5" >
                         <Button.Template>
                             <ControlTemplate TargetType="Button">
                                 <Label HorizontalAlignment="Center" TextBlock.FontSize="12"  Content="{DynamicResource ChosenLang}"/>
@@ -43,37 +53,39 @@
                 </Border>
             </StackPanel>
             
-            <StackPanel Name="AdminPanel" VerticalAlignment="Center" HorizontalAlignment="Left" Grid.Column="1">
-                <Button Margin="10 0 0 0" Content="{DynamicResource AdminPanel}" Width="120px" Click="Button_Click"/>
-            </StackPanel>
-            
-            <StackPanel Name="GuestPanel" Grid.Column="2"
-            Orientation="Horizontal" HorizontalAlignment="Right">
-                <Button Margin="0 0 10 0" Content="{DynamicResource SignInStr}" Width="120px" Click="SignIn_Click"/>
+            <StackPanel Name="AdminPanel" VerticalAlignment="Center" HorizontalAlignment="Left" Grid.Column="2">
+                <Button Margin="10 0 0 0" Content="{DynamicResource AdminPanel}" Width="120px" Visibility="{Binding IsAdmin, Converter={StaticResource BoolToVisibilityConverter}}" Command="{Binding AdminPanelCommand}"/>
             </StackPanel>
 
-            <StackPanel Name="UserPanel" Visibility="Collapsed" VerticalAlignment="Center" HorizontalAlignment="Right" Orientation="Horizontal"  Grid.Column="2">
-                <Label Name="UserNameLabel" Margin="0,0,10,0"></Label>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Grid.Column="3" Visibility="{Binding IsGuest, Converter={StaticResource BoolToVisibilityConverter}}">
+                <Button Content="{DynamicResource SignInStr}" Width="120" Command="{Binding SignInCommand}" Margin="0,0,10,0"/>
+            </StackPanel>
+
+            
+            <StackPanel Name="UserPanel" Visibility="{Binding IsUser, Converter={StaticResource BoolToVisibilityConverter}}" VerticalAlignment="Center" HorizontalAlignment="Right" Orientation="Horizontal"  Grid.Column="3">
+                <Label Content="{Binding Name}" Margin="0,0,10,0"></Label>
                 <Border CornerRadius="50" Background="{DynamicResource DarkColor}" Margin="0,0,10,0"
         VerticalAlignment="Center" HorizontalAlignment="Center" ClipToBounds="True">
-                    <Image Name="UserIcon" HorizontalAlignment="Center" Width="35" Height="35"
-                           Stretch="UniformToFill"
-                           MouseLeftButtonDown="UserIcon_MouseLeftButtonDown"
-                           MouseEnter="UserIcon_MouseEnter"
-                           MouseLeave="UserIcon_MouseLeave">
-                        <Image.Clip>
-                            <RectangleGeometry RadiusX="50" RadiusY="50" Rect="0,0,35,35"/>
-                        </Image.Clip>
-                        <Image.Source>
-                            <BitmapImage UriSource="Resources/img/profile.png"/>
-                        </Image.Source>
-                    </Image>
+                    <Button  HorizontalAlignment="Center" Width="35" Height="35" Command="{Binding NavigateToUserPageCommand}" Cursor="Hand" ToolTip="Кликните для просмотра профиля" BorderThickness="0" Background="Transparent">
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Grid Width="35" Height="35">
+                                    <Image Stretch="UniformToFill" Source="{Binding UserAvatar, Converter={StaticResource ImageSourceConverter}}">
+                                        <Image.Clip>
+                                            <EllipseGeometry Center="17.5,17.5" RadiusX="17.5" RadiusY="17.5"/>
+                                        </Image.Clip>
+                                    </Image>
+                                </Grid>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                    
                 </Border>
 
             </StackPanel>
         </Grid>
 
-        <ScrollViewer  Background="{DynamicResource InteractionColor}" Grid.Column="1" Grid.Row="1" VerticalScrollBarVisibility="Visible">
+        <ScrollViewer  Background="{DynamicResource InteractionColor}" Grid.Column="1" Grid.Row="1" VerticalScrollBarVisibility="Auto">
             <Border  Background="{DynamicResource MainBackground}" CornerRadius="0">
                 <Frame x:Name="MainFrame" NavigationUIVisibility="Hidden"/>
             </Border>

@@ -5,11 +5,40 @@
     <system:String x:Key="NameStr">Name</system:String>
     <system:String x:Key="EmailStr">Email</system:String>
     <system:String x:Key="SignInStr">Sign In</system:String>
-    <system:String x:Key="RegisterStr">Sign UP</system:String>
+    <system:String x:Key="SignOutStr">Sign Out</system:String>
+
+    <system:String x:Key="RegisterStr">Registration</system:String>
+    <system:String x:Key="TitleStr">Title</system:String>
+    <system:String x:Key="DescriptionStr">Description</system:String>
 
     <system:String x:Key="ChosenLang">eng</system:String>
 
+    <system:String x:Key="Text">Text</system:String>
+    <system:String x:Key="Level">Level</system:String>
+
+    <system:String x:Key="LoadPhoto">Upload Photo</system:String>
+    <system:String x:Key="LoadFile">Upload File</system:String>
+    <system:String x:Key="Back">Back</system:String>
+    <system:String x:Key="aboutAuthor">about the author</system:String>
+
+
+    <system:String x:Key="Subscribers">Subscribers</system:String>
+    <system:String x:Key="Requests">Requests</system:String>
+
+    <system:String x:Key="Subscribe">Subscribe</system:String>
+    <system:String x:Key="SendRequest">Send Request</system:String>
+    <system:String x:Key="Send">Send</system:String>
+    <system:String x:Key="PostNotAvailable">Post Not Available</system:String>
+    <system:String x:Key="FotAccess">Subscription of a higher level required for access</system:String>
+
+    <system:String x:Key="Add">Add</system:String>
+    <system:String x:Key="Create">Create</system:String>
+    <system:String x:Key="CreatePost">Create Post</system:String>
+    <system:String x:Key="Save">Save</system:String>
+
+    <system:String x:Key="NoPageInfo">You have not yet created an author page</system:String>
     <system:String x:Key="SearchStr">Search</system:String>
     <system:String x:Key="AdminPanel">Admin Panel</system:String>
+
 
 </ResourceDictionary>

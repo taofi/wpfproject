@@ -19,7 +19,6 @@ namespace WpfApp1
         public int User_id { get; set; }
         public string Text { get; set; }
         public System.DateTime Date { get; set; }
-        public Nullable<int> Rating { get; set; }
     
         public virtual Posts Posts { get; set; }
         public virtual Users Users { get; set; }

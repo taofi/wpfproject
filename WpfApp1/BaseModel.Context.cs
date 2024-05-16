@@ -13,13 +13,8 @@ namespace WpfApp1
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class SUBSCRIPTION_BDEntities : DbContext
+    public partial class SUBSCRIPTION_BDEntities1 : DbContext
     {
-        public SUBSCRIPTION_BDEntities()
-            : base("name=SUBSCRIPTION_BDEntities")
-        {
-        }
-    
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             throw new UnintentionalCodeFirstException();
@@ -34,5 +29,6 @@ namespace WpfApp1
         public virtual DbSet<Subscriptions> Subscriptions { get; set; }
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<Users> Users { get; set; }
+        public virtual DbSet<Requests> Requests { get; set; }
     }
 }

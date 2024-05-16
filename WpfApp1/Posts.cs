@@ -22,7 +22,7 @@ namespace WpfApp1
     
         public int id { get; set; }
         public string Text { get; set; }
-        public Nullable<int> File_id { get; set; }
+        public int File_id { get; set; }
         public int Page_id { get; set; }
         public System.DateTime Date { get; set; }
         public int access_level { get; set; }

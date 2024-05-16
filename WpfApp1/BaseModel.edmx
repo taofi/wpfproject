@@ -4,70 +4,77 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="Хранилище SUBSCRIPTION_BDModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="Хранилище SUBSCRIPTION_BDModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="AuthorPages">
           <Key>
             <PropertyRef Name="AuthorPage_id" />
           </Key>
-          <Property Name="AuthorPage_id" Type="int" Nullable="false" />
-          <Property Name="Owner" Type="int" />
-          <Property Name="PageName" Type="nvarchar" MaxLength="40" />
-          <Property Name="Titel_text" Type="nvarchar" MaxLength="80" />
-          <Property Name="PageIcon" Type="nvarchar" MaxLength="50" />
+          <Property Name="Owner" Type="int" Nullable="false" />
+          <Property Name="PageName" Type="nvarchar" MaxLength="40" Nullable="false" />
+          <Property Name="Titel_text" Type="nvarchar" MaxLength="80" Nullable="false" />
+          <Property Name="PageIcon" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="AuthorPage_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
         </EntityType>
         <EntityType Name="Comments">
           <Key>
             <PropertyRef Name="Comment_id" />
           </Key>
-          <Property Name="Comment_id" Type="int" Nullable="false" />
           <Property Name="Post_id" Type="int" Nullable="false" />
           <Property Name="User_id" Type="int" Nullable="false" />
-          <Property Name="Text" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Text" Type="nvarchar" MaxLength="200" Nullable="false" />
           <Property Name="Date" Type="datetime" Nullable="false" />
-          <Property Name="Rating" Type="int" />
+          <Property Name="Comment_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
         </EntityType>
         <EntityType Name="Files">
           <Key>
             <PropertyRef Name="File_id" />
           </Key>
-          <Property Name="File_id" Type="int" Nullable="false" />
-          <Property Name="type" Type="nvarchar" MaxLength="20" />
-          <Property Name="File_url" Type="nvarchar" MaxLength="50" />
+          <Property Name="type" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="File_url" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="File_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
         </EntityType>
         <EntityType Name="Logins">
           <Key>
             <PropertyRef Name="Login" />
           </Key>
           <Property Name="Login" Type="nvarchar" MaxLength="30" Nullable="false" />
-          <Property Name="Password" Type="nvarchar" MaxLength="50" />
+          <Property Name="Password" Type="nvarchar" MaxLength="64" Nullable="false" />
         </EntityType>
         <EntityType Name="Posts">
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="int" Nullable="false" />
           <Property Name="Text" Type="nvarchar" MaxLength="100" />
-          <Property Name="File_id" Type="int" />
+          <Property Name="File_id" Type="int" Nullable="false" />
           <Property Name="Page_id" Type="int" Nullable="false" />
           <Property Name="Date" Type="datetime" Nullable="false" />
           <Property Name="access_level" Type="int" Nullable="false" />
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Requests">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="User_id" Type="int" Nullable="false" />
+          <Property Name="Type_id" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Subscription_type">
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="int" Nullable="false" />
           <Property Name="Name" Type="nvarchar" MaxLength="30" Nullable="false" />
           <Property Name="Level" Type="int" Nullable="false" />
           <Property Name="Page_id" Type="int" Nullable="false" />
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
         </EntityType>
         <EntityType Name="Subscriptions">
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="int" Nullable="false" />
-          <Property Name="User_id" Type="int" />
-          <Property Name="Type_id" Type="int" />
+          <Property Name="User_id" Type="int" Nullable="false" />
+          <Property Name="Type_id" Type="int" Nullable="false" />
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
         </EntityType>
         <EntityType Name="sysdiagrams">
           <Key>
@@ -83,15 +90,15 @@
           <Key>
             <PropertyRef Name="User_id" />
           </Key>
-          <Property Name="User_id" Type="int" Nullable="false" />
-          <Property Name="Name" Type="nvarchar" MaxLength="30" />
-          <Property Name="Login" Type="nvarchar" MaxLength="30" />
+          <Property Name="Name" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="Login" Type="nvarchar" MaxLength="30" Nullable="false" />
           <Property Name="Email" Type="nvarchar" MaxLength="30" />
-          <Property Name="Role" Type="nvarchar" MaxLength="15" />
-          <Property Name="UserAvatar" Type="nvarchar" MaxLength="50" />
+          <Property Name="Role" Type="nvarchar" MaxLength="15" Nullable="false" />
+          <Property Name="UserAvatar" Type="nvarchar" MaxLength="200" />
+          <Property Name="User_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
         </EntityType>
         <Association Name="FK_AuthorPages_Users">
-          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+          <End Role="Users" Type="Self.Users" Multiplicity="1" />
           <End Role="AuthorPages" Type="Self.AuthorPages" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Users">
@@ -139,7 +146,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Posts_Files">
-          <End Role="Files" Type="Self.Files" Multiplicity="0..1" />
+          <End Role="Files" Type="Self.Files" Multiplicity="1" />
           <End Role="Posts" Type="Self.Posts" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Files">
@@ -147,6 +154,30 @@
             </Principal>
             <Dependent Role="Posts">
               <PropertyRef Name="File_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_request_subscriptions_type">
+          <End Role="Subscription_type" Type="Self.Subscription_type" Multiplicity="1" />
+          <End Role="Requests" Type="Self.Requests" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Subscription_type">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Requests">
+              <PropertyRef Name="Type_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_request_user">
+          <End Role="Users" Type="Self.Users" Multiplicity="1" />
+          <End Role="Requests" Type="Self.Requests" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="User_id" />
+            </Principal>
+            <Dependent Role="Requests">
+              <PropertyRef Name="User_id" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -163,7 +194,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Subscriptions_subscription_type">
-          <End Role="Subscription_type" Type="Self.Subscription_type" Multiplicity="0..1" />
+          <End Role="Subscription_type" Type="Self.Subscription_type" Multiplicity="1" />
           <End Role="Subscriptions" Type="Self.Subscriptions" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Subscription_type">
@@ -175,7 +206,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Subscriptions_Users">
-          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+          <End Role="Users" Type="Self.Users" Multiplicity="1" />
           <End Role="Subscriptions" Type="Self.Subscriptions" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Users">
@@ -187,7 +218,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Users_Logins">
-          <End Role="Logins" Type="Self.Logins" Multiplicity="0..1" />
+          <End Role="Logins" Type="Self.Logins" Multiplicity="1" />
           <End Role="Users" Type="Self.Users" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Logins">
@@ -204,6 +235,7 @@
           <EntitySet Name="Files" EntityType="Self.Files" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Logins" EntityType="Self.Logins" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Posts" EntityType="Self.Posts" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Requests" EntityType="Self.Requests" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Subscription_type" EntityType="Self.Subscription_type" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Subscriptions" EntityType="Self.Subscriptions" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
@@ -228,6 +260,14 @@
             <End Role="Files" EntitySet="Files" />
             <End Role="Posts" EntitySet="Posts" />
           </AssociationSet>
+          <AssociationSet Name="FK_request_subscriptions_type" Association="Self.FK_request_subscriptions_type">
+            <End Role="Subscription_type" EntitySet="Subscription_type" />
+            <End Role="Requests" EntitySet="Requests" />
+          </AssociationSet>
+          <AssociationSet Name="FK_request_user" Association="Self.FK_request_user">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Requests" EntitySet="Requests" />
+          </AssociationSet>
           <AssociationSet Name="FK_subscription_type_AuthorPages" Association="Self.FK_subscription_type_AuthorPages">
             <End Role="AuthorPages" EntitySet="AuthorPages" />
             <End Role="Subscription_type" EntitySet="Subscription_type" />
@@ -245,8 +285,7 @@
             <End Role="Users" EntitySet="Users" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="SUBSCRIPTION_BDModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -255,10 +294,10 @@
             <PropertyRef Name="AuthorPage_id" />
           </Key>
           <Property Name="AuthorPage_id" Type="Int32" Nullable="false" />
-          <Property Name="Owner" Type="Int32" />
-          <Property Name="PageName" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
-          <Property Name="Titel_text" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
-          <Property Name="PageIcon" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Owner" Type="Int32" Nullable="false" />
+          <Property Name="PageName" Type="String" MaxLength="40" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Titel_text" Type="String" MaxLength="80" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="PageIcon" Type="String" Unicode="true" FixedLength="false" MaxLength="200" Nullable="false" />
           <NavigationProperty Name="Users" Relationship="Self.FK_AuthorPages_Users" FromRole="AuthorPages" ToRole="Users" />
           <NavigationProperty Name="Posts" Relationship="Self.FK_Posts_AuthorPages" FromRole="AuthorPages" ToRole="Posts" />
           <NavigationProperty Name="Subscription_type" Relationship="Self.FK_subscription_type_AuthorPages" FromRole="AuthorPages" ToRole="Subscription_type" />
@@ -270,9 +309,8 @@
           <Property Name="Comment_id" Type="Int32" Nullable="false" />
           <Property Name="Post_id" Type="Int32" Nullable="false" />
           <Property Name="User_id" Type="Int32" Nullable="false" />
-          <Property Name="Text" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Text" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Date" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="Rating" Type="Int32" />
           <NavigationProperty Name="Posts" Relationship="Self.FK_Comments_Posts" FromRole="Comments" ToRole="Posts" />
           <NavigationProperty Name="Users" Relationship="Self.FK_Comments_Users" FromRole="Comments" ToRole="Users" />
         </EntityType>
@@ -281,8 +319,8 @@
             <PropertyRef Name="File_id" />
           </Key>
           <Property Name="File_id" Type="Int32" Nullable="false" />
-          <Property Name="type" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Name="File_url" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="type" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="File_url" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
           <NavigationProperty Name="Posts" Relationship="Self.FK_Posts_Files" FromRole="Files" ToRole="Posts" />
         </EntityType>
         <EntityType Name="Logins">
@@ -290,7 +328,7 @@
             <PropertyRef Name="Login" />
           </Key>
           <Property Name="Login" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" MaxLength="64" Nullable="false" Unicode="true" FixedLength="false" />
           <NavigationProperty Name="Users" Relationship="Self.FK_Users_Logins" FromRole="Logins" ToRole="Users" />
         </EntityType>
         <EntityType Name="Posts">
@@ -299,7 +337,7 @@
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" />
           <Property Name="Text" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="File_id" Type="Int32" />
+          <Property Name="File_id" Type="Int32" Nullable="false" />
           <Property Name="Page_id" Type="Int32" Nullable="false" />
           <Property Name="Date" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="access_level" Type="Int32" Nullable="false" />
@@ -317,14 +355,15 @@
           <Property Name="Page_id" Type="Int32" Nullable="false" />
           <NavigationProperty Name="AuthorPages" Relationship="Self.FK_subscription_type_AuthorPages" FromRole="Subscription_type" ToRole="AuthorPages" />
           <NavigationProperty Name="Subscriptions" Relationship="Self.FK_Subscriptions_subscription_type" FromRole="Subscription_type" ToRole="Subscriptions" />
+          <NavigationProperty Name="Requests" Relationship="SUBSCRIPTION_BDModel.FK_request_subscriptions_type" FromRole="Subscription_type" ToRole="Requests" />
         </EntityType>
         <EntityType Name="Subscriptions">
           <Key>
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" />
-          <Property Name="User_id" Type="Int32" />
-          <Property Name="Type_id" Type="Int32" />
+          <Property Name="User_id" Type="Int32" Nullable="false" />
+          <Property Name="Type_id" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Subscription_type" Relationship="Self.FK_Subscriptions_subscription_type" FromRole="Subscriptions" ToRole="Subscription_type" />
           <NavigationProperty Name="Users" Relationship="Self.FK_Subscriptions_Users" FromRole="Subscriptions" ToRole="Users" />
         </EntityType>
@@ -343,18 +382,19 @@
             <PropertyRef Name="User_id" />
           </Key>
           <Property Name="User_id" Type="Int32" Nullable="false" />
-          <Property Name="Name" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
-          <Property Name="Login" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="Name" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Login" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Email" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
-          <Property Name="Role" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
-          <Property Name="UserAvatar" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Role" Type="String" MaxLength="15" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="UserAvatar" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="AuthorPages" Relationship="Self.FK_AuthorPages_Users" FromRole="Users" ToRole="AuthorPages" />
           <NavigationProperty Name="Comments" Relationship="Self.FK_Comments_Users" FromRole="Users" ToRole="Comments" />
           <NavigationProperty Name="Logins" Relationship="Self.FK_Users_Logins" FromRole="Users" ToRole="Logins" />
           <NavigationProperty Name="Subscriptions" Relationship="Self.FK_Subscriptions_Users" FromRole="Users" ToRole="Subscriptions" />
+          <NavigationProperty Name="Requests" Relationship="SUBSCRIPTION_BDModel.FK_request_user" FromRole="Users" ToRole="Requests" />
         </EntityType>
         <Association Name="FK_AuthorPages_Users">
-          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+          <End Role="Users" Type="Self.Users" Multiplicity="1" />
           <End Role="AuthorPages" Type="Self.AuthorPages" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Users">
@@ -414,7 +454,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Posts_Files">
-          <End Role="Files" Type="Self.Files" Multiplicity="0..1" />
+          <End Role="Files" Type="Self.Files" Multiplicity="1" />
           <End Role="Posts" Type="Self.Posts" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Files">
@@ -426,7 +466,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Users_Logins">
-          <End Role="Logins" Type="Self.Logins" Multiplicity="0..1" />
+          <End Role="Logins" Type="Self.Logins" Multiplicity="1" />
           <End Role="Users" Type="Self.Users" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Logins">
@@ -438,7 +478,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Subscriptions_subscription_type">
-          <End Role="Subscription_type" Type="Self.Subscription_type" Multiplicity="0..1" />
+          <End Role="Subscription_type" Type="Self.Subscription_type" Multiplicity="1" />
           <End Role="Subscriptions" Type="Self.Subscriptions" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Subscription_type">
@@ -450,7 +490,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Subscriptions_Users">
-          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+          <End Role="Users" Type="Self.Users" Multiplicity="1" />
           <End Role="Subscriptions" Type="Self.Subscriptions" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Users">
@@ -461,7 +501,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="SUBSCRIPTION_BDEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="SUBSCRIPTION_BDEntities1" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="AuthorPages" EntityType="Self.AuthorPages" />
           <EntitySet Name="Comments" EntityType="Self.Comments" />
           <EntitySet Name="Files" EntityType="Self.Files" />
@@ -507,13 +547,56 @@
             <End Role="Users" EntitySet="Users" />
             <End Role="Subscriptions" EntitySet="Subscriptions" />
           </AssociationSet>
+          <EntitySet Name="Requests" EntityType="SUBSCRIPTION_BDModel.Requests" />
+          <AssociationSet Name="FK_request_subscriptions_type" Association="SUBSCRIPTION_BDModel.FK_request_subscriptions_type">
+            <End Role="Subscription_type" EntitySet="Subscription_type" />
+            <End Role="Requests" EntitySet="Requests" />
+          </AssociationSet>
+          <AssociationSet Name="FK_request_user" Association="SUBSCRIPTION_BDModel.FK_request_user">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Requests" EntitySet="Requests" />
+          </AssociationSet>
         </EntityContainer>
+        <EntityType Name="Requests">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="User_id" Type="Int32" Nullable="false" />
+          <Property Name="Type_id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Subscription_type" Relationship="SUBSCRIPTION_BDModel.FK_request_subscriptions_type" FromRole="Requests" ToRole="Subscription_type" />
+          <NavigationProperty Name="Users" Relationship="SUBSCRIPTION_BDModel.FK_request_user" FromRole="Requests" ToRole="Users" />
+        </EntityType>
+        <Association Name="FK_request_subscriptions_type">
+          <End Type="SUBSCRIPTION_BDModel.Subscription_type" Role="Subscription_type" Multiplicity="1" />
+          <End Type="SUBSCRIPTION_BDModel.Requests" Role="Requests" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Subscription_type">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Requests">
+              <PropertyRef Name="Type_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_request_user">
+          <End Type="SUBSCRIPTION_BDModel.Users" Role="Users" Multiplicity="1" />
+          <End Type="SUBSCRIPTION_BDModel.Requests" Role="Requests" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="User_id" />
+            </Principal>
+            <Dependent Role="Requests">
+              <PropertyRef Name="User_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="Хранилище SUBSCRIPTION_BDModelContainer" CdmEntityContainer="SUBSCRIPTION_BDEntities">
+        <EntityContainerMapping StorageEntityContainer="Хранилище SUBSCRIPTION_BDModelContainer" CdmEntityContainer="SUBSCRIPTION_BDEntities1">
           <EntitySetMapping Name="AuthorPages">
             <EntityTypeMapping TypeName="SUBSCRIPTION_BDModel.AuthorPages">
               <MappingFragment StoreEntitySet="AuthorPages">
@@ -533,7 +616,6 @@
                 <ScalarProperty Name="User_id" ColumnName="User_id" />
                 <ScalarProperty Name="Text" ColumnName="Text" />
                 <ScalarProperty Name="Date" ColumnName="Date" />
-                <ScalarProperty Name="Rating" ColumnName="Rating" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -605,6 +687,15 @@
                 <ScalarProperty Name="Email" ColumnName="Email" />
                 <ScalarProperty Name="Role" ColumnName="Role" />
                 <ScalarProperty Name="UserAvatar" ColumnName="UserAvatar" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Requests">
+            <EntityTypeMapping TypeName="SUBSCRIPTION_BDModel.Requests">
+              <MappingFragment StoreEntitySet="Requests">
+                <ScalarProperty Name="Type_id" ColumnName="Type_id" />
+                <ScalarProperty Name="User_id" ColumnName="User_id" />
+                <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

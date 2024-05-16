@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="Хранилище SUBSCRIPTION_BDModelContainer" CdmEntityContainer="SUBSCRIPTION_BDEntities">
+  <EntityContainerMapping StorageEntityContainer="Хранилище SUBSCRIPTION_BDModelContainer" CdmEntityContainer="SUBSCRIPTION_BDEntities1">
     <EntitySetMapping Name="AuthorPages">
       <EntityTypeMapping TypeName="SUBSCRIPTION_BDModel.AuthorPages">
         <MappingFragment StoreEntitySet="AuthorPages">
@@ -20,7 +20,6 @@
           <ScalarProperty Name="User_id" ColumnName="User_id" />
           <ScalarProperty Name="Text" ColumnName="Text" />
           <ScalarProperty Name="Date" ColumnName="Date" />
-          <ScalarProperty Name="Rating" ColumnName="Rating" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -92,6 +91,15 @@
           <ScalarProperty Name="Email" ColumnName="Email" />
           <ScalarProperty Name="Role" ColumnName="Role" />
           <ScalarProperty Name="UserAvatar" ColumnName="UserAvatar" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Requests">
+      <EntityTypeMapping TypeName="SUBSCRIPTION_BDModel.Requests">
+        <MappingFragment StoreEntitySet="Requests">
+          <ScalarProperty Name="Type_id" ColumnName="Type_id" />
+          <ScalarProperty Name="User_id" ColumnName="User_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Хранилище SUBSCRIPTION_BDModelContainer" CdmEntityContainer="SUBSCRIPTION_BDEntities1">
+    <EntitySetMapping Name="AuthorPages">
+      <EntityTypeMapping TypeName="SUBSCRIPTION_BDModel.AuthorPages">
+        <MappingFragment StoreEntitySet="AuthorPages">
+          <ScalarProperty Name="AuthorPage_id" ColumnName="AuthorPage_id" />
+          <ScalarProperty Name="Owner" ColumnName="Owner" />
+          <ScalarProperty Name="PageName" ColumnName="PageName" />
+          <ScalarProperty Name="Titel_text" ColumnName="Titel_text" />
+          <ScalarProperty Name="PageIcon" ColumnName="PageIcon" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Comments">
+      <EntityTypeMapping TypeName="SUBSCRIPTION_BDModel.Comments">
+        <MappingFragment StoreEntitySet="Comments">
+          <ScalarProperty Name="Comment_id" ColumnName="Comment_id" />
+          <ScalarProperty Name="Post_id" ColumnName="Post_id" />
+          <ScalarProperty Name="User_id" ColumnName="User_id" />
+          <ScalarProperty Name="Text" ColumnName="Text" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Rating" ColumnName="Rating" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Files">
+      <EntityTypeMapping TypeName="SUBSCRIPTION_BDModel.Files">
+        <MappingFragment StoreEntitySet="Files">
+          <ScalarProperty Name="File_id" ColumnName="File_id" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="File_url" ColumnName="File_url" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Logins">
+      <EntityTypeMapping TypeName="SUBSCRIPTION_BDModel.Logins">
+        <MappingFragment StoreEntitySet="Logins">
+          <ScalarProperty Name="Login" ColumnName="Login" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Posts">
+      <EntityTypeMapping TypeName="SUBSCRIPTION_BDModel.Posts">
+        <MappingFragment StoreEntitySet="Posts">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Text" ColumnName="Text" />
+          <ScalarProperty Name="File_id" ColumnName="File_id" />
+          <ScalarProperty Name="Page_id" ColumnName="Page_id" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="access_level" ColumnName="access_level" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Subscription_type">
+      <EntityTypeMapping TypeName="SUBSCRIPTION_BDModel.Subscription_type">
+        <MappingFragment StoreEntitySet="Subscription_type">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Level" ColumnName="Level" />
+          <ScalarProperty Name="Page_id" ColumnName="Page_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Subscriptions">
+      <EntityTypeMapping TypeName="SUBSCRIPTION_BDModel.Subscriptions">
+        <MappingFragment StoreEntitySet="Subscriptions">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="User_id" ColumnName="User_id" />
+          <ScalarProperty Name="Type_id" ColumnName="Type_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="SUBSCRIPTION_BDModel.sysdiagrams">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="SUBSCRIPTION_BDModel.Users">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="User_id" ColumnName="User_id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Login" ColumnName="Login" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Role" ColumnName="Role" />
+          <ScalarProperty Name="UserAvatar" ColumnName="UserAvatar" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

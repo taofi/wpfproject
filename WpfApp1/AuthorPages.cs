@@ -22,7 +22,7 @@ namespace WpfApp1
         }
     
         public int AuthorPage_id { get; set; }
-        public Nullable<int> Owner { get; set; }
+        public int Owner { get; set; }
         public string PageName { get; set; }
         public string Titel_text { get; set; }
         public string PageIcon { get; set; }
