@@ -215,6 +215,7 @@
     <Compile Include="Users.cs">
       <DependentUpon>BaseModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Utilities\DatabaseConfig.cs" />
     <Compile Include="Utilities\Service\FileService.cs" />
     <Compile Include="Utilities\Navigation\FrameNames.cs" />
     <Compile Include="Utilities\Navigation\INavigationService.cs" />

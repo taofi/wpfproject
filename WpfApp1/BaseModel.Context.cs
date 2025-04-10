@@ -6,6 +6,7 @@
 //     Изменения, вносимые в этот файл вручную, будут перезаписаны при повторном создании кода.
 // </auto-generated>
 //------------------------------------------------------------------------------
+using WpfApp1.Utilities;
 
 namespace WpfApp1
 {
@@ -15,6 +16,7 @@ namespace WpfApp1
     
     public partial class SUBSCRIPTION_BDEntities1 : DbContext
     {
+       
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             throw new UnintentionalCodeFirstException();

@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-D:\4_sem\ООП\WpfApp1\wfplab\WpfApp1\obj\Debug\
+C:\Users\Kirill\Desktop\wpfproject\WpfApp1\obj\Debug\
 WpfApp1
 none
 false
 DEBUG;TRACE
-D:\4_sem\ООП\WpfApp1\wfplab\WpfApp1\App.xaml
+C:\Users\Kirill\Desktop\wpfproject\WpfApp1\App.xaml
 25463632049
 2-1161474625
-77-356223420
-581161662076
+78-44710317
+581767280890
 Resources\Style\Converters.xaml;MVVM\User_Controls\IconButton.xaml;MVVM\View\AdminWindow.xaml;MVVM\View\Forms\LoginPage.xaml;MVVM\View\Forms\RegisterPage.xaml;MainWindow.xaml;MVVM\View\Pages\AuthorPage.xaml;MVVM\View\Pages\CatalogPage.xaml;MVVM\View\Pages\CommentsPage.xaml;MVVM\View\Pages\CreatePostPage.xaml;MVVM\View\Pages\Subscription\CreateSubscriptionTypesPage.xaml;MVVM\View\Pages\Subscription\RequestsPage.xaml;MVVM\View\Pages\SettingsPages\AuthorPageSetting.xaml;MVVM\View\Pages\SettingsPages\CreateAuthorPage.xaml;MVVM\View\Pages\SettingsPages\PageList.xaml;MVVM\View\Pages\Subscription\SubscriptionPage.xaml;MVVM\View\Pages\UserPage.xaml;Resources\Languages\language.xaml;Resources\Languages\Strings.en-US.xaml;Resources\Languages\Strings.ru-RU.xaml;Resources\Style\Colors.xaml;Resources\Style\Static.xaml;Resources\Style\StyleRed.xaml;Resources\Style\StyleGreen.xaml;Resources\Style\StylePurple.xaml;
 
-False
+True
 

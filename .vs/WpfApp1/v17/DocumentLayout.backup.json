@@ -3,24 +3,24 @@
   "WorkspaceRootPath": "C:\\Users\\Kirill\\Desktop\\wpfproject\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{029F8F23-0FFB-4A0B-9D84-325B0EC9961A}|WpfApp1\\WpfApp1.csproj|c:\\users\\kirill\\desktop\\wpfproject\\wpfapp1\\utilities\\databaseconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{029F8F23-0FFB-4A0B-9D84-325B0EC9961A}|WpfApp1\\WpfApp1.csproj|solutionrelative:wpfapp1\\utilities\\databaseconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{029F8F23-0FFB-4A0B-9D84-325B0EC9961A}|WpfApp1\\WpfApp1.csproj|c:\\users\\kirill\\desktop\\wpfproject\\wpfapp1\\utilities\\basemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{029F8F23-0FFB-4A0B-9D84-325B0EC9961A}|WpfApp1\\WpfApp1.csproj|solutionrelative:wpfapp1\\utilities\\basemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{029F8F23-0FFB-4A0B-9D84-325B0EC9961A}|WpfApp1\\WpfApp1.csproj|c:\\users\\kirill\\desktop\\wpfproject\\wpfapp1\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
-      "RelativeMoniker": "D:0:0:{029F8F23-0FFB-4A0B-9D84-325B0EC9961A}|WpfApp1\\WpfApp1.csproj|solutionrelative:wpfapp1\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{029F8F23-0FFB-4A0B-9D84-325B0EC9961A}|WpfApp1\\WpfApp1.csproj|c:\\users\\kirill\\desktop\\wpfproject\\wpfapp1\\mvvm\\models\\partialclass\\subscription_bdentities1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{029F8F23-0FFB-4A0B-9D84-325B0EC9961A}|WpfApp1\\WpfApp1.csproj|solutionrelative:wpfapp1\\mvvm\\models\\partialclass\\subscription_bdentities1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{029F8F23-0FFB-4A0B-9D84-325B0EC9961A}|WpfApp1\\WpfApp1.csproj|c:\\users\\kirill\\desktop\\wpfproject\\wpfapp1\\basemodel.context.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{029F8F23-0FFB-4A0B-9D84-325B0EC9961A}|WpfApp1\\WpfApp1.csproj|solutionrelative:wpfapp1\\basemodel.context.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{029F8F23-0FFB-4A0B-9D84-325B0EC9961A}|WpfApp1\\WpfApp1.csproj|c:\\users\\kirill\\desktop\\wpfproject\\wpfapp1\\utilities\\basemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{029F8F23-0FFB-4A0B-9D84-325B0EC9961A}|WpfApp1\\WpfApp1.csproj|solutionrelative:wpfapp1\\utilities\\basemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{029F8F23-0FFB-4A0B-9D84-325B0EC9961A}|WpfApp1\\WpfApp1.csproj|c:\\users\\kirill\\desktop\\wpfproject\\wpfapp1\\utilities\\databaseconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{029F8F23-0FFB-4A0B-9D84-325B0EC9961A}|WpfApp1\\WpfApp1.csproj|solutionrelative:wpfapp1\\utilities\\databaseconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{029F8F23-0FFB-4A0B-9D84-325B0EC9961A}|WpfApp1\\WpfApp1.csproj|c:\\users\\kirill\\desktop\\wpfproject\\wpfapp1\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{029F8F23-0FFB-4A0B-9D84-325B0EC9961A}|WpfApp1\\WpfApp1.csproj|solutionrelative:wpfapp1\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,11 +30,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
               "Title": "SUBSCRIPTION_BDEntities1.cs",
               "DocumentMoniker": "C:\\Users\\Kirill\\Desktop\\wpfproject\\WpfApp1\\MVVM\\Models\\PartialClass\\SUBSCRIPTION_BDEntities1.cs",
               "RelativeDocumentMoniker": "WpfApp1\\MVVM\\Models\\PartialClass\\SUBSCRIPTION_BDEntities1.cs",
@@ -47,12 +47,12 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 1,
               "Title": "BaseModel.Context.cs",
               "DocumentMoniker": "C:\\Users\\Kirill\\Desktop\\wpfproject\\WpfApp1\\BaseModel.Context.cs",
               "RelativeDocumentMoniker": "WpfApp1\\BaseModel.Context.cs",
-              "ToolTip": "C:\\Users\\Kirill\\Desktop\\wpfproject\\WpfApp1\\BaseModel.Context.cs",
-              "RelativeToolTip": "WpfApp1\\BaseModel.Context.cs",
+              "ToolTip": "C:\\Users\\Kirill\\Desktop\\wpfproject\\WpfApp1\\BaseModel.Context.cs*",
+              "RelativeToolTip": "WpfApp1\\BaseModel.Context.cs*",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-10T16:23:01.959Z",
@@ -64,7 +64,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "DatabaseConfig.cs",
               "DocumentMoniker": "C:\\Users\\Kirill\\Desktop\\wpfproject\\WpfApp1\\Utilities\\DatabaseConfig.cs",
               "RelativeDocumentMoniker": "WpfApp1\\Utilities\\DatabaseConfig.cs",
@@ -77,7 +77,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "BaseModel.cs",
               "DocumentMoniker": "C:\\Users\\Kirill\\Desktop\\wpfproject\\WpfApp1\\Utilities\\BaseModel.cs",
               "RelativeDocumentMoniker": "WpfApp1\\Utilities\\BaseModel.cs",
@@ -90,13 +90,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "App.config",
               "DocumentMoniker": "C:\\Users\\Kirill\\Desktop\\wpfproject\\WpfApp1\\App.config",
               "RelativeDocumentMoniker": "WpfApp1\\App.config",
               "ToolTip": "C:\\Users\\Kirill\\Desktop\\wpfproject\\WpfApp1\\App.config",
               "RelativeToolTip": "WpfApp1\\App.config",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAB6AAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
               "WhenOpened": "2025-04-10T16:12:55.322Z",
               "EditorCaption": ""
